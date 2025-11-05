@@ -1,53 +1,18 @@
-import React from "react";
 
-export default function Controls({ onHit, onStand, onRestart, disabled, gameOver }) {
+import React from "react";
+import './styles.css';
+
+export default function Controles({ hit, stand, newGame, isPlayerTurn, gameOver }) {
     return (
-        <div style={{ marginTop: "1rem" }}>
-            <button
-                onClick={onHit}
-                disabled={disabled || gameOver}
-                style={{
-                    margin: "0 5px",
-                    padding: "8px 16px",
-                    borderRadius: "6px",
-                    backgroundColor: "#2196f3",
-                    color: "white",
-                    border: "none",
-                    cursor: disabled ? "not-allowed" : "pointer",
-                }}
-            >
+        <div className="controles">
+            <button className="control-btn btn-hit" onClick={hit} disabled={!isPlayerTurn || gameOver}>
                 Pedir carta
             </button>
-
-            <button
-                onClick={onStand}
-                disabled={disabled || gameOver}
-                style={{
-                    margin: "0 5px",
-                    padding: "8px 16px",
-                    borderRadius: "6px",
-                    backgroundColor: "#4caf50",
-                    color: "white",
-                    border: "none",
-                    cursor: disabled ? "not-allowed" : "pointer",
-                }}
-            >
+            <button className="control-btn btn-stand" onClick={stand} disabled={!isPlayerTurn || gameOver}>
                 Plantarse
             </button>
-
-            <button
-                onClick={onRestart}
-                style={{
-                    margin: "0 5px",
-                    padding: "8px 16px",
-                    borderRadius: "6px",
-                    backgroundColor: "#9c27b0",
-                    color: "white",
-                    border: "none",
-                    cursor: "pointer",
-                }}
-            >
-                Nueva partida
+            <button className="control-btn btn-new" onClick={newGame}>
+                Nuevo juego
             </button>
         </div>
     );

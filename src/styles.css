@@ -1,0 +1,224 @@
+/* ===== GENERAL ===== */
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at center, #025b2b 0%, #003a18 100%);
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ===== START SCREEN ===== */
+.start-container {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 3rem 4rem;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+  border: 2px solid gold;
+}
+
+.start-container h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  color: gold;
+  text-shadow: 0 0 10px #000;
+}
+
+.config {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+input,
+select {
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid gold;
+  background: #003a18;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.start-btn {
+  background: gold;
+  color: #003a18;
+  border: none;
+  font-weight: bold;
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.start-btn:hover {
+  background: #ffd700;
+  transform: scale(1.05);
+}
+
+/* ===== MESA ===== */
+.mesa-container {
+  background: radial-gradient(circle at center, #036636 0%, #00421e 100%);
+  border: 3px solid gold;
+  border-radius: 25px;
+  padding: 2rem;
+  margin: 1rem auto;
+  width: 80%;
+  max-width: 900px;
+  box-shadow: 0 0 40px rgba(255, 215, 0, 0.2);
+  text-align: center;
+  position: relative;
+}
+
+.mesa-container h1 {
+  color: gold;
+  text-shadow: 0 0 8px #000;
+  margin-bottom: 1rem;
+}
+
+.dealer-section,
+.player-section {
+  margin: 1.5rem 0;
+}
+
+.card {
+  width: 90px;
+  border-radius: 10px;
+  margin: 0.3rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  transform: rotateZ(-1deg);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* ===== SCOREBOARD ===== */
+.scoreboard {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid gold;
+  border-radius: 12px;
+  padding: 0.8rem 1.2rem;
+  display: inline-flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.scoreboard div {
+  font-size: 1.1rem;
+}
+
+.scoreboard button {
+  background: #ffd700;
+  color: #003a18;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.scoreboard button:hover {
+  background: gold;
+  transform: scale(1.05);
+}
+
+/* ===== MESSAGE ===== */
+.message {
+  font-size: 1.5rem;
+  margin: 1.2rem 0;
+  color: #fff;
+  text-shadow: 0 0 8px #000;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .mesa-container {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .card {
+    width: 70px;
+  }
+
+  .start-container {
+    padding: 2rem;
+  }
+}
+
+/* ===== CONTROLES ===== */
+.controles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.control-btn {
+  padding: 0.8rem 1.6rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.3s ease;
+  color: #fff;
+  text-shadow: 0 0 4px #000;
+  min-width: 120px;
+}
+
+/* Color 1 – Pedir carta */
+.btn-hit {
+  background: linear-gradient(145deg, #1f9d55, #147a3b);
+  box-shadow: 0 4px 0 #0b4a23;
+}
+.btn-hit:hover {
+  background: linear-gradient(145deg, #26b85f, #179545);
+  transform: translateY(-2px);
+}
+
+/* Color 2 – Plantarse */
+.btn-stand {
+  background: linear-gradient(145deg, #d97706, #b45309);
+  box-shadow: 0 4px 0 #78350f;
+}
+.btn-stand:hover {
+  background: linear-gradient(145deg, #f59e0b, #d97706);
+  transform: translateY(-2px);
+}
+
+/* Color 3 – Nuevo juego */
+.btn-new {
+  background: linear-gradient(145deg, #2563eb, #1d4ed8);
+  box-shadow: 0 4px 0 #1e3a8a;
+}
+.btn-new:hover {
+  background: linear-gradient(145deg, #3b82f6, #2563eb);
+  transform: translateY(-2px);
+}
+
+.control-btn:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
